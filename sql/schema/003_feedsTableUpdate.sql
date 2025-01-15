@@ -1,0 +1,10 @@
+-- +goose Up
+ALTER TABLE feeds ADD COLUMN id UUID PRIMARY KEY;
+ALTER TABLE feeds ADD COLUMN created_at TIMESTAMP NOT NULL;
+ALTER TABLE feeds ADD COLUMN updated_at TIMESTAMP NOT NULL;
+
+
+-- +goose Down
+ALTER TABLE feeds DROP COLUMN id;
+ALTER TABLE feeds DROP COLUMN created_at;
+ALTER TABLE feeds DROP COLUMN updated_at;
